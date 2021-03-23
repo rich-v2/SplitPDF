@@ -16,6 +16,8 @@ def pdf_split(filename,first,last,keep_pieces):
     """ This function splits the file filename into up to 3 pieces."""
     if filename.find(".pdf") == -1:
         filename += ".pdf"
+
+    first -= 1
     # Open file
     with open(filename, 'rb') as f:
         # Create file reader object
