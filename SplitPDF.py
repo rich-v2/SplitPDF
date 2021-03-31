@@ -1,5 +1,7 @@
 import tkinter as tk
+from tkinter import ttk
 from pdf_split import pdf_split
+import os, re
 
 WIDTH = 800
 HEIGHT = 1000
@@ -25,7 +27,7 @@ canvas = tk.Canvas(root, width = WIDTH, height = HEIGHT)
 canvas.pack()
 
 # Background image
-background_image = tk.PhotoImage(file="split.png")
+background_image = tk.PhotoImage(file=os.path.join("Assets","split.png"))
 background_label = tk.Label(root, image=background_image)
 background_label.place(relwidth=1,relheight=1)
 
@@ -39,7 +41,8 @@ f1.place(relx=0.5,rely= 0.05, relwidth = 0.8,relheight = 0.2,anchor = "n")
 # filename -> widgets: label and entry?
 l1 = tk.Label(f1, text = "Filename", bg = "#fcfcfc")
 l1.place(relwidth = 0.45, relheight = 0.15)
-e1 = tk.Entry(f1)
+files = [x for x in os.listdir() if re.search(".pdf",x)]
+e1 = ttk.Combobox(f1, values=files)
 e1.place(relx = 0.55, relwidth = 0.45, relheight = 0.15)
 
 # first page -> label and entry
