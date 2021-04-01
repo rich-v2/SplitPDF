@@ -79,8 +79,8 @@ f2 = tk.Frame(root, bg = "#0731db",bd = 5)
 f2.place(relx=0.5,rely= 0.7, relwidth = 0.8,relheight = 0.2,anchor = "n")
 
 l5 = tk.Label(f2, text = "Hello! I am Mooses and I will split your PDF document in up to three pieces.\n" \
-    "Just Save your file in the same directory as the exe file and specify the required information.\n" \
-        "Then I shall split your file!")
+    "Just save your file in the same directory as this program and specify the required information.\n" \
+        "I shall split your file in no time!")
 l5.place(relwidth=1,relheight=1)
 
 root.mainloop()
